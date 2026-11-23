@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="theme-color" content="#f3f3f3">
+	<title>Hisob yaratish — ERTY Store</title>
+	<link rel="stylesheet" href="style.css">
+	<script src="script.js" defer></script>
+</head>
+<body class="auth-page">
+	<header class="auth-topbar">
+		<a class="auth-brand" href="index.html" aria-label="ERTY Store bosh sahifa">
+			<span class="auth-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+			<strong>ERTY</strong><span>Store</span>
+		</a>
+		<a class="auth-back" href="index.html">Do'konga qaytish</a>
+	</header>
+
+	<main class="auth-main">
+		<section class="auth-art" aria-label="ERTY Store hamjamiyati">
+			<img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=1200&q=85" alt="O'yin turniridagi katta ekran va muxlislar">
+			<div class="auth-art-copy">
+				<p class="auth-eyebrow">ERTY STORE A'ZOLIGI</p>
+				<h1>O'yinlaringiz. Sizning kutubxonangiz.</h1>
+				<p>Sevimli o'yinlaringizni bir joyda saqlang va yangi sarguzashtlarni kashf qiling.</p>
+			</div>
+		</section>
+
+		<section class="auth-panel" aria-labelledby="signupTitle">
+			<div class="auth-heading">
+				<h2 id="signupTitle">Hisob yarating</h2>
+				<p>ERTY Store imkoniyatlaridan foydalanishni boshlang.</p>
+			</div>
+
+			<form class="auth-form" data-auth-form="signup">
+				<div class="field">
+					<label for="displayName">Ism</label>
+					<input id="displayName" name="name" type="text" placeholder="Ismingiz" autocomplete="name" minlength="2" maxlength="60" required>
+				</div>
+
+				<div class="field">
+					<label for="signupEmail">Elektron pochta</label>
+					<input id="signupEmail" name="email" type="email" placeholder="nom@example.com" autocomplete="email" maxlength="254" required>
+				</div>
+
+				<div class="field">
+					<label for="newPassword">Parol</label>
+					<div class="password-wrap">
+						<input id="newPassword" name="password" type="password" data-password autocomplete="new-password" minlength="8" maxlength="128" aria-describedby="passwordRules" required>
+						<button class="password-toggle" type="button" data-password-toggle="newPassword" aria-controls="newPassword" aria-label="Parolni ko'rsatish">Ko'rsatish</button>
+					</div>
+					<div class="password-meter" data-password-meter data-level="0" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+					<ul class="password-rules" id="passwordRules" aria-label="Parol talablari">
+						<li data-rule="length">Kamida 8 belgi</li>
+						<li data-rule="upper">Bitta katta harf</li>
+						<li data-rule="number">Bitta raqam</li>
+						<li data-rule="symbol">Bitta belgi (!, #, ?)</li>
+					</ul>
+				</div>
+
+				<div class="field">
+					<label for="confirmPassword">Parolni tasdiqlang</label>
+					<div class="password-wrap">
+						<input id="confirmPassword" name="confirmPassword" type="password" data-password-confirm autocomplete="new-password" minlength="8" maxlength="128" required>
+						<button class="password-toggle" type="button" data-password-toggle="confirmPassword" aria-controls="confirmPassword" aria-label="Tasdiqlash parolini ko'rsatish">Ko'rsatish</button>
+					</div>
+				</div>
+
+				<label class="check-row" for="terms">
+					<input id="terms" name="terms" type="checkbox" required>
+					<span>Foydalanish shartlari va maxfiylik qoidalariga roziman.</span>
+				</label>
+
+				<p class="auth-status" data-auth-status role="status" aria-live="polite"></p>
+				<button class="auth-submit" type="submit">Hisob yaratish</button>
+			</form>
+
+			<p class="auth-switch">Hisobingiz bormi? <a href="signIn.html">Kirish</a></p>
+			<p class="auth-legal">Hisob ma'lumotlari shu qurilmadagi brauzerda saqlanadi.</p>
+		</section>
+	</main>
+</body>
+</html>

@@ -1,0 +1,96 @@
+body {
+    min-height: 100vh
+}
+
+.admin-gate {
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    padding: 24px
+}
+
+.gate-panel {
+    width: min(440px, 100%);
+    padding: 28px;
+    border: 1px solid #dfe3e3;
+    border-radius: 6px;
+    background: #fff;
+    box-shadow: 0 12px 36px rgb(0 0 0 / 6%)
+}
+
+.gate-brand {
+    margin-bottom: 28px
+}
+
+.gate-panel h1 {
+    margin: 0;
+    font-size: 23px;
+    font-weight: 650
+}
+
+.gate-description {
+    margin: 8px 0 21px;
+    color: #666;
+    font-size: 12px;
+    line-height: 1.55
+}
+
+.gate-form {
+    display: grid;
+    gap: 12px
+}
+
+.gate-form[hidden] {
+    display: none
+}
+
+.gate-form .primary-button {
+    width: 100%;
+    margin-top: 2px
+}
+
+.gate-status {
+    min-height: 16px;
+    margin: 0;
+    color: #a4262c;
+    font-size: 11px
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 18px
+}
+
+.text-button {
+    padding: 5px 0;
+    border: 0;
+    background: transparent;
+    color: #4c5555;
+    font: inherit;
+    font-size: 11px;
+    cursor: pointer
+}
+
+.text-button:hover {
+    color: #0067b8;
+    text-decoration: underline
+}
+
+@media(max-width:480px) {
+    .admin-gate {
+        padding: 14px
+    }
+
+    .gate-panel {
+        padding: 22px 18px
+    }
+
+    .admin-header-inner {
+        gap: 10px
+    }
+
+    .header-actions {
+        gap: 12px
+    }
+}

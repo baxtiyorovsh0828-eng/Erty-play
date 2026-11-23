@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="theme-color" content="#f3f3f3">
+	<title>Kutubxona — ERTY Store</title>
+	<style>
+		:root{color-scheme:light;--ink:#1b1b1b;--muted:#626262;--line:#e4e4e4;--blue:#0067b8;--canvas:#f3f3f3;font-family:"Segoe UI Variable","Segoe UI",sans-serif}
+		*{box-sizing:border-box}body{margin:0;min-width:320px;background:var(--canvas);color:var(--ink)}a{color:inherit}.visually-hidden{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}.header{background:#fff;border-bottom:1px solid var(--line)}.header-inner,.main{width:min(1200px,calc(100% - 40px));margin:auto}.header-inner{min-height:68px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{display:flex;align-items:center;gap:10px;text-decoration:none}.mark{width:22px;height:22px;display:grid;grid-template-columns:1fr 1fr;gap:2px}.mark i:nth-child(1){background:#f25022}.mark i:nth-child(2){background:#7fba00}.mark i:nth-child(3){background:#00a4ef}.mark i:nth-child(4){background:#ffb900}.back{color:var(--blue);font-size:13px;text-decoration:none}.main{padding:42px 0 64px}.heading{display:flex;align-items:end;justify-content:space-between;gap:16px;margin-bottom:22px}.heading h1{margin:0;font-size:28px;font-weight:650}.heading p{margin:7px 0 0;color:var(--muted);font-size:13px}.count{color:var(--muted);font-size:12px;white-space:nowrap}.search{width:100%;max-width:400px;height:40px;margin-bottom:16px;padding:0 12px;border:1px solid #999;border-radius:4px;background:white;font:inherit;font-size:13px}.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,330px),1fr));gap:10px}.item{min-width:0;display:grid;grid-template-columns:72px minmax(0,1fr) auto;gap:13px;align-items:center;padding:12px;border:1px solid var(--line);border-radius:6px;background:#fff}.item img{width:72px;height:72px;border-radius:5px;background:#eee;object-fit:cover}.name{overflow:hidden;margin:0 0 5px;font-size:14px;text-overflow:ellipsis;white-space:nowrap}.meta{margin:0;color:var(--muted);font-size:11px}.actions{display:flex;flex-direction:column;gap:7px}.actions a,.remove{min-height:30px;display:inline-flex;align-items:center;justify-content:center;padding:0 10px;border:1px solid var(--line);border-radius:3px;background:#fff;font:inherit;font-size:11px;text-decoration:none;cursor:pointer}.actions a{border-color:var(--blue);background:var(--blue);color:#fff}.actions a:hover{background:#005a9e}.remove:hover{border-color:#a4262c;color:#a4262c}.empty{padding:48px 16px;border:1px dashed #bbb;border-radius:6px;background:#fff;text-align:center}.empty[hidden]{display:none}.empty h2{margin:0 0 7px;font-size:17px}.empty p{margin:0 0 17px;color:var(--muted);font-size:13px}.empty a{color:var(--blue);font-size:13px;text-decoration:none}.status{min-height:18px;margin:12px 0;color:#a4262c;font-size:12px}
+		@media(max-width:520px){.header-inner,.main{width:calc(100% - 28px)}.main{padding-top:27px}.heading{align-items:flex-start;flex-direction:column;gap:8px}.item{grid-template-columns:58px minmax(0,1fr) auto;gap:9px;padding:9px}.item img{width:58px;height:58px}.actions a,.remove{padding:0 7px;font-size:10px}}
+	</style>
+	<link rel="stylesheet" href="standalone.css">
+	<script src="db.js" defer></script>
+	<script src="standalone.js" defer></script>
+</head>
+<body data-page="library">
+	<header class="store-header"><div class="store-header-inner"><a class="store-brand" href="index.html"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span><strong>ERTY</strong><span>Store</span></a><nav class="store-nav" aria-label="Asosiy menyu"><a href="index.html" data-nav="home">Bosh sahifa</a><a href="o'yinlar.html" data-nav="games">O'yinlar</a><a href="ilovalar.html" data-nav="apps">Ilovalar</a><a href="toplamlar.html" data-nav="collections">To'plamlar</a><a href="kutubxona.html" data-nav="library">Kutubxona</a></nav><a class="store-account" href="signIn.html">Kirish</a></div></header>
+	<main class="store-main"><section class="page-heading"><div><p class="eyebrow">ERTY STORE</p><h1>Mening kutubxonam</h1><p class="page-intro">Saqlagan o'yin va ilovalaringiz bir joyda.</p></div><span class="results-count" id="libraryCount" aria-live="polite"></span></section>
+		<section class="library-list" id="libraryGrid" aria-label="Saqlangan mahsulotlar"></section>
+		<p class="library-empty" id="libraryEmpty" hidden>Kutubxonangiz hozircha bo'sh. Katalogdan mahsulot saqlang.</p>
+	</main>
+	<footer class="store-footer"><a href="index.html">ERTY Store</a><span>© 2026 ERTY</span></footer>
+</body>
+</html>

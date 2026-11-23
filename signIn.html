@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="theme-color" content="#f3f3f3">
+	<title>Kirish — ERTY Store</title>
+	<link rel="stylesheet" href="style.css">
+	<script src="script.js" defer></script>
+</head>
+<body class="auth-page">
+	<header class="auth-topbar">
+		<a class="auth-brand" href="index.html" aria-label="ERTY Store bosh sahifa">
+			<span class="auth-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+			<strong>ERTY</strong><span>Store</span>
+		</a>
+		<a class="auth-back" href="index.html">Do'konga qaytish</a>
+	</header>
+
+	<main class="auth-main">
+		<section class="auth-art" aria-label="ERTY Store hamjamiyati">
+			<img src="https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?auto=format&fit=crop&w=1200&q=85" alt="O'yin boshqaruvchisi bilan o'yin jarayoni">
+			<div class="auth-art-copy">
+				<p class="auth-eyebrow">ERTY STORE</p>
+				<h1>Kutubxonangiz sizni kutmoqda.</h1>
+				<p>Hisobingizga kiring va saqlangan o'yinlaringizni davom ettiring.</p>
+			</div>
+		</section>
+
+		<section class="auth-panel" aria-labelledby="signinTitle">
+			<div class="auth-heading">
+				<h2 id="signinTitle">Xush kelibsiz</h2>
+				<p>ERTY Store hisobingiz bilan davom eting.</p>
+			</div>
+
+			<form class="auth-form" data-auth-form="signin">
+				<div class="field">
+					<label for="signinEmail">Elektron pochta yoki admin login</label>
+					<input id="signinEmail" name="email" type="text" placeholder="nom@example.com yoki Admin" autocomplete="username" maxlength="254" required>
+				</div>
+
+				<div class="field">
+					<label for="signinPassword">Parol</label>
+					<div class="password-wrap">
+						<input id="signinPassword" name="password" type="password" autocomplete="current-password" required>
+						<button class="password-toggle" type="button" data-password-toggle="signinPassword" aria-controls="signinPassword" aria-label="Parolni ko'rsatish">Ko'rsatish</button>
+					</div>
+				</div>
+
+				<p class="auth-status" data-auth-status role="status" aria-live="polite"></p>
+				<button class="auth-submit" type="submit">Kirish</button>
+			</form>
+
+			<p class="auth-switch"><a href="admin.html">Admin paneliga kirish</a></p>
+			<p class="auth-switch">Yangi foydalanuvchimisiz? <a href="signUp.html">Hisob yarating</a></p>
+			<p class="auth-legal">Hisob ma'lumotlari shu qurilmadagi brauzerda saqlanadi.</p>
+		</section>
+	</main>
+</body>
+</html>

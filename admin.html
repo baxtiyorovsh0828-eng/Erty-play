@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="theme-color" content="#f3f3f3">
+	<title>Admin panel — ERTY Store</title>
+	<link rel="stylesheet" href="admin.css">
+	<link rel="stylesheet" href="admin-gate.css">
+	<script src="db.js" defer></script>
+	<script src="admin.js" defer></script>
+</head>
+<body>
+	<main class="admin-gate" id="adminGate" hidden>
+		<section class="gate-panel" aria-labelledby="gateTitle">
+			<a class="admin-brand gate-brand" href="index.html"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span><strong>ERTY</strong><span>Store</span><span class="admin-label">Admin</span></a>
+			<p class="eyebrow">ERTY STORE</p><h1 id="gateTitle">Admin panelga kirish</h1>
+			<p class="gate-description" id="gateDescription">Admin hisobiga kiring.</p>
+			<form id="loginForm" class="gate-form" hidden>
+				<label class="field">Login<input name="username" type="text" autocomplete="username" required></label>
+				<label class="field">Parol<input name="password" type="password" autocomplete="current-password" maxlength="128" required></label>
+				<p class="gate-status" id="loginStatus" role="alert"></p><button class="primary-button" type="submit">Kirish</button>
+			</form>
+		</section>
+	</main>
+	<header class="admin-header" id="adminHeader" hidden><div class="admin-header-inner">
+		<a class="admin-brand" href="index.html"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span><strong>ERTY</strong><span>Store</span><span class="admin-label">Admin</span></a>
+		<div class="header-actions"><button class="text-button" id="lockAdmin" type="button">Qulflash</button><a class="store-link" href="index.html">Do'konga qaytish</a></div>
+	</div></header>
+	<main class="admin-main" id="adminApp" hidden>
+		<div class="page-title"><div><p class="eyebrow">ERTY STORE</p><h1>Mahsulotlar boshqaruvi</h1><p class="subtitle">O'yin va ilovalar katalogini boshqaring.</p></div><button class="primary-button" id="addProduct" type="button">+ Mahsulot qo'shish</button></div>
+		<section class="stats" aria-label="Katalog ko'rsatkichlari"><div class="stat"><span>Jami mahsulot</span><strong id="totalCount">0</strong></div><div class="stat"><span>O'yinlar</span><strong id="gameCount">0</strong></div><div class="stat"><span>Ilovalar</span><strong id="appCount">0</strong></div></section>
+		<section class="catalog-panel" aria-labelledby="catalogTitle">
+			<div class="catalog-toolbar"><div><h2 id="catalogTitle">Katalog</h2><p id="visibleCount" aria-live="polite"></p></div><div class="filters"><label><span class="visually-hidden">Mahsulot qidirish</span><input id="adminSearch" type="search" placeholder="Nomi yoki janr bo'yicha qidirish" autocomplete="off"></label><select id="typeFilter" aria-label="Mahsulot turini tanlash"><option value="all">Barcha turlar</option><option value="game">O'yinlar</option><option value="app">Ilovalar</option></select><button class="secondary-button" id="resetCatalog" type="button">Boshlang'ich holat</button></div></div>
+			<div class="table-scroll"><table><thead><tr><th>Mahsulot</th><th>Turi</th><th>Janr / kategoriya</th><th>Baho</th><th>Narx</th><th>Amallar</th></tr></thead><tbody id="catalogRows"></tbody></table></div>
+			<p class="empty-state" id="emptyState" hidden>Qidiruv bo'yicha mahsulot topilmadi.</p>
+		</section>
+		<p class="admin-status" id="adminStatus" role="status" aria-live="polite"></p>
+	</main>
+	<dialog class="product-dialog" id="productDialog" aria-labelledby="formTitle">
+		<form id="productForm" novalidate>
+			<div class="dialog-heading"><div><p class="eyebrow">KATALOG</p><h2 id="formTitle">Mahsulot qo'shish</h2></div><button class="icon-button" id="closeDialog" type="button" aria-label="Yopish">×</button></div>
+			<div class="form-grid">
+				<label class="field field-wide">Mahsulot nomi<input name="name" required maxlength="80" placeholder="Masalan: New Game"></label>
+				<label class="field">Turi<select name="type" required><option value="game">O'yin</option><option value="app">Ilova</option></select></label>
+				<label class="field">Janr / kategoriya<input name="category" required maxlength="60" placeholder="Masalan: Poyga"></label>
+				<label class="field">Janr kodi<select name="genre" required><option value="action">Ekshn</option><option value="adventure">Sarguzasht</option><option value="racing">Poyga</option><option value="strategy">Strategiya</option><option value="app">Ilova</option></select></label>
+				<label class="field">Baho (0–5)<input name="rating" type="number" min="0" max="5" step="0.1" value="4.5" required></label>
+				<label class="field">Narx<select name="price" required><option>Bepul</option><option>Pullik</option></select></label>
+				<label class="field field-wide">Rasm URL<input name="image" type="url" required placeholder="https://..."></label>
+				<label class="field field-wide">Rasmiy sahifa havolasi<input name="downloadUrl" type="url" required placeholder="https://..."></label>
+				<label class="field field-wide">Qidiruv kalit so'zlari<textarea name="keywords" rows="2" placeholder="poyga, mashina, tezlik"></textarea></label>
+				<label class="field field-wide">Qisqa tavsif<textarea name="description" rows="3" required maxlength="320" placeholder="Mahsulot haqida..."></textarea></label>
+			</div>
+			<p class="form-error" id="formError" role="alert"></p>
+			<div class="dialog-actions"><button class="secondary-button" id="cancelDialog" type="button">Bekor qilish</button><button class="primary-button" type="submit">Saqlash</button></div>
+		</form>
+	</dialog>
+</body>
+</html>
